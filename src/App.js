@@ -24,7 +24,7 @@ useEffect(() => {
     // Listen to the offline status
     window.addEventListener('offline', handleStatusChange);
      //send a toast message
-     isOnline?toast("You are Online"):toast("You are Offline")
+     isOnline?toast.success("You are Online"):toast.error("You are Offline")
     // Specify how to clean up after this effect for performance improvment
     return () => {
       window.removeEventListener('online', handleStatusChange);
