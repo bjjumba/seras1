@@ -1,7 +1,7 @@
 import {configureStore} from '@reduxjs/toolkit'
-import productReducer,{productsFetch} from './features/productSlice'
+import productReducer from './features/productSlice'
 import {productsApi} from './features/productsApi'
-import cartReducer from './features/cartSlice'
+import cartReducer,{getTotal} from './features/cartSlice'
 
 export const store =configureStore({
     reducer:{
@@ -12,5 +12,6 @@ export const store =configureStore({
     middleware:(getDefaultMiddleware)=>getDefaultMiddleware().concat(productsApi.middleware)
 })
 
+store.dispatch(getTotal())//dispatch the action when the app loads or reloads anytime
 
 
