@@ -1,4 +1,5 @@
 import React from 'react'
+import {useNavigate} from 'react-router-dom'
 import {useGetAllProductsQuery} from '../features/productsApi'
 import {useDispatch} from 'react-redux'
 import {addToCart} from '../features/cartSlice'
@@ -6,9 +7,12 @@ import {addToCart} from '../features/cartSlice'
 const Home = () => {
 const {data,error,isLoading} =useGetAllProductsQuery()
 const dispatch=useDispatch()
+//configuring using use navigator
+let navigate=useNavigate()
 //function to handle add to Cart
 const handleAddToCart=(product)=>{
     dispatch(addToCart(product))
+    navigate("/cart")
 }
 
 //checking whether the application is offlin
