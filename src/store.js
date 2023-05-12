@@ -3,6 +3,7 @@ import productReducer from './features/productSlice'
 import {productsApi} from './features/productsApi'
 import cartReducer,{getTotal} from './features/cartSlice'
 
+/*Added a comment */
 export const store =configureStore({
     reducer:{
        products:productReducer,
