@@ -11,7 +11,7 @@ export const productsFetch=createAsyncThunk(
     //async function to carry out data fetching
     async()=>{
     // try{
-        const response=await axios.get("https://ussd-callback.onrender.com/products")
+        const response=await axios.get("https://serabackend2.onrender.com/products")
         return response?.data//the question mark is to capyure incase of any errors
     //}
     // catch(error){
